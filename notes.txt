@@ -1,0 +1,7 @@
+01/26/2023  Thursday  Terraform 
+
+1. Scenario: Lets say 4 DevSecOps professionals working on building the infrastructure 
+in AWS. As IAC tool they use Terraform. How do you make sure they share exactly the 
+same configuration of infranstructure. Solution --> Backend config 
+2. terraform apply -var "vpc_cidr=10.30.0.0/16" -auto-approve --> Command Line always has a peresedence 
+3. Workspaces --> environments in terraform
