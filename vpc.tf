@@ -1,5 +1,5 @@
 locals {
-    vpc_name = "${terraform.workspace == "prod" ? "orchsky-prod" : "orchsky-dev"}"
+  vpc_name = terraform.workspace == "prod" ? "orchsky-prod" : "orchsky-dev"
 }
 
 resource "aws_vpc" "my_vpc" {
