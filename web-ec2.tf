@@ -13,7 +13,7 @@ resource "aws_instance" "web" {
   subnet_id              = local.pub_sub_ids[count.index]
   tags                   = local.web_tags
   vpc_security_group_ids = [aws_security_group.web_sg.id]
-  iam_instance_profile = aws_iam_instance_profile.s3_ec2_profile.name
+  iam_instance_profile   = aws_iam_instance_profile.s3_ec2_profile.name
   user_data              = file("scripts/apache.sh")
 
 }
