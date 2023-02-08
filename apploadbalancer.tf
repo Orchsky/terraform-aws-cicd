@@ -18,6 +18,10 @@ resource "aws_lb" "orchsky" {
   load_balancer_type = "application"
   security_groups    = [aws_security_group.elb_sg.id]
   subnets            = local.pub_sub_ids
+  access_logs {
+    bucket  = "orchsky-alb-access-logs"
+    enabled = true
+  }
 
   tags = {
     Environment = terraform.workspace

@@ -9,3 +9,14 @@ resource "aws_s3_bucket" "my_bucket" {
   }
 
 }
+
+resource "aws_s3_bucket" "alb_access_logs" {
+  bucket = "orchsky-alb-access-logs"
+  policy = data.template_file.orchsky.rendered
+  acl    = "public-read-write"
+  tags = {
+    Name        = "orchsky-alb-access-logs"
+    Environment = terraform.workspace
+  }
+
+}

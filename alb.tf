@@ -49,3 +49,10 @@ resource "aws_security_group" "elb_sg" {
   }
 
 }
+
+data "template_file" "orchsky" {
+  template = file("scripts/iam/alb-s3-access-logs.json")
+  vars = {
+    access_logs_bucket = "orchsky-alb-access-logs"
+  }
+}
