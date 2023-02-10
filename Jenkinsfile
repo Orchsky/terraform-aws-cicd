@@ -8,14 +8,14 @@ pipeline {
             steps{
                 sh "terraform init"
                 sh label: '', returnStatus: true, script: 'terraform workspace new dev'
-                sh "terraform destroy -auto-approve"
+                sh "terraform apply -auto-approve"
             }
         }
         stage('terraform init and apply - prod'){
             steps{
                 sh "terraform init"
                 sh label: '', returnStatus: true, script: 'terraform workspace new prod'
-                sh "terraform destroy -auto-approve"
+                sh "terraform apply -auto-approve"
             }
         }
     }
