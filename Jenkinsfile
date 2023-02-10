@@ -8,7 +8,7 @@ pipeline {
             steps{
                 sh "terraform init"
                 sh label: '', returnStatus: true, script: 'terraform workspace new dev'
-                sh "terraform apply"
+                sh "terraform apply -auto-approve"
             }
         }
     }
