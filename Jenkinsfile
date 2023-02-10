@@ -6,8 +6,8 @@ pipeline {
     stages {
         stage('terraform init and apply - dev'){
             steps{
-                sh "terraform workspace new dev"
                 sh "terraform init"
+                sh "terraform workspace new dev"
             }
         }
     }
